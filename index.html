@@ -32,7 +32,7 @@
         <section data-transition="slide" data-background="#222">
           <h2>Welcome</h2>
           <section>INFI-CON 2019</section>
-          <section>First!</section>
+          <section>.infi-con-2019:first-child { content: 'jeroen'; }</section>
           <section>INFI-CON's common theme</section>
           <section>Basis for technology</section>
           <section>Office? Customers? Agile?</section>
@@ -67,7 +67,27 @@
           <h2>1. Tests</h2>
           <section>Explanation</section>
           <section><img class="img-boxed" src="assets/cooking-bread.jpg"></section>
-          <section>Coding example</section>
+          <section><pre class="cs"><code data-trim>
+              [Fact] // "Test"
+              public void Can_serialize_regular_object() {
+                  var result = JsonConvert.SerializeObject(new Bar { Name = "Moe's" });
+                  Assert.Equal("{\"Name\":\"Moe's\"}", result);
+              }
+              
+              [Fact] // "Test"
+              public void Can_serialize_dynamic_object() {
+                  var result = JsonConvert.SerializeObject(new { Answer = 42 });
+                  Assert.Equal("{\"Answer\":42}", result);
+              }
+              
+              [Fact] // "Test"
+              public void Can_serialize_circular_reference() {
+                  var input = new Dictionary&lt;string, object&gt;();
+                  input["Nemesis"] = input;
+                  var result = JsonConvert.SerializeObject(input);
+                  Assert.NotNull(result); // Fails! TODO: Invert assertion.
+              }
+          </code></pre></section>
           <section>Empathy</section>
         </section>
 
@@ -75,15 +95,16 @@
           <h2>2. Questions</h2>
           <section>Explanation</section>
           <section><img class="img-boxed" src="assets/cooking-potatoes-on-salt.png"></section>
-          <section>Coding example</section>
+          <section><img class="img-boxed" src="assets/coding-questions-1.png"></section>
+          <section><img class="img-boxed" src="assets/coding-questions-2.png"></section>
           <section>Empathy</section>
         </section>
 
         <section data-transition="slide" data-background-color="#ffff99">
           <h2>3. Issues</h2>
           <section>Explanation</section>
-          <section><img class="img-boxed" src="assets/cooking-palindrome-cocktail.png" alt="Palindrome cocktail question"></section>
-          <section>Coding example</section>
+          <section><img class="img-boxed" src="assets/cooking-palindrome-cocktail.png"></section>
+          <section><img class="img-boxed" src="assets/coding-issues.png"></section>
           <section>Empathy</section>
         </section>
 
@@ -91,18 +112,18 @@
           <h2>4. Repros</h2>
           <section>Explanation</section>
           <section><img class="img-boxed" src="assets/cooking-limoncello.jpg"></section>
-          <section>Coding example</section>
+          <section><img class="img-boxed" src="assets/coding-repro.png"></section>
           <section>Empathy</section>
         </section>
 
-        <section data-transition="slide" data-background-color="#73f2e9">
+        <section data-transition="slide" data-background-color="#A0EFE9">
           <h2>5. Examples</h2>
           <section>Explanation</section>
           <section><img class="img-boxed" src="assets/cooking-bolognese-question.png"></section>
           <section><img class="img-boxed" src="assets/cooking-bolognese-answer.png"></section>
           <section><img class="img-boxed" src="assets/cooking-bolognese-result.jpg"></section>
-          <section>Cooking example</section>
-          <section>Coding example</section>
+          <section><img class="img-boxed" src="assets/coding-example-1.png"></section>
+          <section><img class="img-boxed" src="assets/coding-example-2.png"></section>
           <section>Empathy</section>
         </section>
 
@@ -110,7 +131,8 @@
           <h2>6. Teaching</h2>
           <section>Explanation</section>
           <section><img class="img-boxed" src="assets/cooking-cocktail.jpg"></section>
-          <section>Coding example</section>
+          <section><img src="assets/coding-teaching-1.png"></section>
+          <section><img src="assets/coding-teaching-2.png"></section>
           <section>Empathy</section>
         </section>
 
@@ -123,7 +145,25 @@
           <section><img class="img-boxed" src="assets/cooking-fish-answer-3.png"></section>
           <section><img class="img-boxed" src="assets/cooking-fish-answer-4.png"></section>
           <section><img class="img-boxed" src="assets/cooking-fish-answer-5.png"></section>
-          <section>Coding example</section>
+          <section><pre class="js"><code data-trim>
+            // Public/private class fields in Javascript
+            // https://github.com/tc39/proposal-class-fields
+            
+            class Tc39Test {
+              #foo = "ryan";          // Private field!
+              bar = "announcement";   // Public field.
+
+              get old() { return "school"; }
+              get backdoor() { return this.#foo; }
+            }
+            
+            let thing = new Tc39Test();
+            
+            console.log(thing.old);       // "school"
+            console.log(thing.bar);       // "bar"
+            console.log(thing.foo);       // undefined
+            console.log(thing.backdoor);  // "ryan"
+          </code></pre></section>
           <section>Empathy</section>
         </section>
 
