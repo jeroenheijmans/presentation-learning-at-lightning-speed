@@ -58,8 +58,8 @@
         <section data-transition="slide" data-background-color="#ff9999">
           <h2>1. Tests</h2>
           <section>Test your assumptions!</section>
-          <section><img class="img-boxed" src="assets/cooking-bread.jpg"></section>
-          <section><pre class="cs"><code data-trim>
+          <section><img class="stretch" src="assets/cooking-bread.jpg"></section>
+          <section><pre class="cs"><code data-trim data-line-numbers>
               [Fact] // "Test"
               public void Can_serialize_regular_object() {
                   var result = JsonConvert.SerializeObject(new Bar { Name = "Moe's" });
@@ -86,58 +86,58 @@
         <section data-transition="slide" data-background-color="#ffcc99">
           <h2>2. Questions</h2>
           <section>Question behind the question & The journey of writing a question counts</section>
-          <section><img class="img-boxed" src="assets/cooking-potatoes-on-salt.png"></section>
-          <section><img class="img-boxed" src="assets/coding-questions-1.png"></section>
-          <section><img class="img-boxed" src="assets/coding-questions-2.png"></section>
+          <section><img class="stretch" src="assets/cooking-potatoes-on-salt.png"></section>
+          <section><img class="stretch" src="assets/coding-questions-1.png"></section>
+          <section><img class="stretch" src="assets/coding-questions-2.png"></section>
           <section>Try to close the gap between your (biased) context, and context of others. (Also: respect their time!)</section>
         </section>
 
         <section data-transition="slide" data-background-color="#ffff99">
           <h2>3. Issues</h2>
           <section>Similar to Questions. It provides a specific path through technology.</section>
-          <section><img class="img-boxed" src="assets/cooking-palindrome-cocktail.png"></section>
-          <section><img class="img-boxed" src="assets/coding-issues.png"></section>
+          <section><img class="stretch" src="assets/cooking-palindrome-cocktail.png"></section>
+          <section><img class="stretch" src="assets/coding-issues.png"></section>
           <section>Try to close the gap between your (biased) context, and context of others. (Also: respect their time!)</section>
         </section>
 
         <section data-transition="slide" data-background-color="#ccf8a0">
           <h2>4. Repros</h2>
           <section><ul><li>Finding your own resolution</li><li>Getting quicker resolution</li><li>For future reference</li></ul></section>
-          <section><img class="img-boxed" src="assets/cooking-limoncello.jpg"></section>
-          <section><img class="img-boxed" src="assets/coding-repro.png"></section>
+          <section><img class="stretch" src="assets/cooking-limoncello.jpg"></section>
+          <section><img class="stretch" src="assets/coding-repro.png"></section>
           <section>There are both altruistic <em>and</em> egoistic reasons for practicing empathy when creating repros.</section>
         </section>
 
         <section data-transition="slide" data-background-color="#A0EFE9">
           <h2>5. Examples</h2>
           <section><p class="fragment">Examples should be exemplary!</p></section>
-          <section><img class="img-boxed" src="assets/cooking-bolognese-question.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-bolognese-answer.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-bolognese-result.jpg"></section>
-          <section><img class="img-boxed" src="assets/coding-example-1.png"></section>
-          <section><img class="img-boxed" src="assets/coding-example-2.png"></section>
+          <section><img class="stretch" src="assets/cooking-bolognese-question.png"></section>
+          <section><img class="stretch" src="assets/cooking-bolognese-answer.png"></section>
+          <section><img class="stretch" src="assets/cooking-bolognese-result.jpg"></section>
+          <section><img class="stretch" src="assets/coding-example-1.png"></section>
+          <section><img class="stretch" src="assets/coding-example-2.png"></section>
           <section>What would <em>you</em> want to see in an example?!</section>
         </section>
 
         <section data-transition="slide" data-background-color="#99ccff">
           <h2>6. Teaching</h2>
           <section><blockquote class="fragment">If you want to get good at something, start teaching it!</blockquote></section>
-          <section><img class="img-boxed" src="assets/cooking-cocktail.jpg"></section>
-          <section><img src="assets/coding-teaching-1.png"></section>
-          <section><img src="assets/coding-teaching-2.png"></section>
+          <section><img class="stretch" src="assets/cooking-cocktail.jpg"></section>
+          <section><img class="stretch" src="assets/coding-teaching-1.png"></section>
+          <section><img class="stretch" src="assets/coding-teaching-2.png"></section>
           <section>Know your student</section>
         </section>
 
         <section data-transition="slide" data-background-color="#ea9efa">
           <h2>7. Exploring</h2>
           <section>Explanation</section>
-          <section><img class="img-boxed" src="assets/cooking-fish-question.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-fish-answer-1.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-fish-answer-2.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-fish-answer-3.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-fish-answer-4.png"></section>
-          <section><img class="img-boxed" src="assets/cooking-fish-answer-5.png"></section>
-          <section><pre class="js"><code data-trim>
+          <section><img class="stretch" src="assets/cooking-fish-question.png"></section>
+          <section><img class="stretch" src="assets/cooking-fish-answer-1.png"></section>
+          <section><img class="stretch" src="assets/cooking-fish-answer-2.png"></section>
+          <section><img class="stretch" src="assets/cooking-fish-answer-3.png"></section>
+          <section><img class="stretch" src="assets/cooking-fish-answer-4.png"></section>
+          <section><img class="stretch" src="assets/cooking-fish-answer-5.png"></section>
+          <section><pre class="js"><code data-trim data-line-numbers>
             // Proposal TC39: Public/private class fields in Javascript
             
             class Tc39Test {
@@ -202,6 +202,10 @@
 
     <script>
       Reveal.initialize({
+        slideNumber: true,
+        history: true,
+        width: 1920,
+        height: 1080,
         transition: 'none',
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
