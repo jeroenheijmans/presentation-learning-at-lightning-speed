@@ -26,3 +26,11 @@
 .reveal h6 {
   font-family: "Gudea", "Source Sans Pro", Helvetica, sans-serif;
 }
+
+.twocol {
+  display: flex;
+}
+
+.twocol > * {
+  flex: 1;
+}
