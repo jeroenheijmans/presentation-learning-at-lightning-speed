@@ -1,3 +1,13 @@
+.reveal strong {
+  
+  font-weight: normal;
+  text-shadow:
+   -1px -1px 4px #000,  
+    1px -1px 4px #000,
+    -1px 1px 4px #000,
+     1px 1px 4px #000;
+}
+
 .reveal .list-unstyled {
   margin: 0;
   padding: 0;
@@ -24,7 +34,8 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  font-family: "Gudea", "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Acme", "Georgia", Helvetica, sans-serif;
+  font-weight: normal;
 }
 
 .twocol {
@@ -33,4 +44,8 @@
 
 .twocol > * {
   flex: 1;
+}
+
+.reveal .impactful {
+  font-size: 128px;
 }
