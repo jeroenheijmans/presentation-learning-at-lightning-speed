@@ -2,6 +2,18 @@
   font-size: 36px;
 }
 
+.reveal > footer {
+  z-index: 1;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px;
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 20px;
+}
+
 .reveal strong {
   color: #ffd;
   font-weight: normal;
@@ -63,4 +75,4 @@
   font-size: 128px;
 }
 
-.slides { border: 1px solid #fca; }
+.sslides { border: 1px solid #fca; }

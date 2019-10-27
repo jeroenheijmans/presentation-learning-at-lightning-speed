@@ -16,6 +16,8 @@
   </head>
   <body>
     <div class="reveal">
+      <footer>@jeroenheijmans</footer>
+
       <div class="slides">
         <section>
           <h1>Learning at Lightning Speed</h1>
@@ -92,7 +94,7 @@
           <h2>2. Questions</h2>
           <section class="impactful"><p class="fragment">It's about the <em>journey</em>,<br> not the <em>destination</em>.</p></section>
           <section><img style="transform: scale(1.3)" src="assets/cooking-potatoes-on-salt.png"></section>
-          <section><img style="transform: scale(1.3)" src="assets/coding-question.png"></section>
+          <section><p>How to handle null in JsonConverter.ReadJson()?</p><img src="assets/coding-question.png"></section>
           <section><h3>Bridge the Gap</h3><p>prevents wasting other people's time</p><p>help others with similar questions</p></section>
         </section>
 
@@ -146,23 +148,25 @@
           <section><img src="assets/cooking-fish-answer-3.png"></section>
           <section><img src="assets/cooking-fish-answer-4.png"></section>
           <section><img src="assets/cooking-fish-answer-5.png"></section>
+          <section class="impactful">Code Demo<footer>(next slide contains static code example)</footer></section>
           <section><pre class="js"><code data-trim data-line-numbers>
-            // Proposal TC39: Public/private class fields in Javascript
-            
-            class Tc39Test {
-              #foo = "ryan";          // Private field!
-              bar = "announcement";   // Public field.
+              // Proposal TC39: Public/private class fields in Javascript
 
-              get old() { return "school"; }
-              get backdoor() { return this.#foo; }
-            }
-            
-            let thing = new Tc39Test();
-            
-            console.log(thing.old);       // "school"
-            console.log(thing.bar);       // "bar"
-            console.log(thing.foo);       // undefined
-            console.log(thing.backdoor);  // "ryan"
+              class Tc39Test {
+                #myPrivate = "ryan";          // Private field!
+                myPublic = "announcement";   // Public field.
+              
+                get myGetter() { return "school"; }
+                get backdoor() { return this.#myPrivate; }
+              }
+              
+              let thing = new Tc39Test();
+              
+              console.log('myGetter = ', thing.myGetter);         // "school"
+              console.log('myPublic = ', thing.myPublic);         // "announcement"
+              console.log('myPrivate = ', thing.myPrivate);       // undefined!!!
+              console.log('backdoor = ', thing.backdoor);         // "ryan"
+              console.log('Object.keys => ', Object.keys(thing)); // ['myPublic'] only
           </code></pre></section>
           <section><h3>Bridge the Gap</h3><p>Don't explore only your <em>own</em> comfort zone!</p></section>
         </section>
@@ -208,15 +212,31 @@
 
         <section data-transition="slide">
           <h2>References</h2>
-          <p><a target="_blank" href="https://jeroenheijmans.nl" target="_blank">jeroenheijmans.nl</a></p>
-          <p><a target="_blank" href="https://github.com/tc39/proposal-class-fields">github.com/tc39/proposal-class-fields</a></p>
-          <p><a target="_blank" href="https://cooking.stackexchange.com/questions/50468/why-would-you-place-potatoes-on-salt-when-baking-in-the-oven">cooking.stackexchange.com/questions/50468/why-place-potatoes-on-salt</a></p>
-          <p><a target="_blank" href="https://cooking.stackexchange.com/questions/22405/is-there-any-trick-to-make-a-palindrome-cocktail">cooking.stackexchange.com/questions/22405/make-a-palindrome-cocktail</a></p>
-          <p><a target="_blank" href="https://cooking.stackexchange.com/questions/46531/key-ingredients-for-classic-sauce-bolognese-rag%C3%B9-bolognese">cooking.stackexchange.com/questions/46531/classic-sauce-bolognese-ragù-bolognese</a></p>
-          <p><a target="_blank" href="https://github.com/infi-nl/coding-dojo-netcore">github.com/infi-nl/coding-dojo-netcore</a></p>
-          <p><a target="_blank" href="https://github.com/jeroenheijmans/sample-angular-oauth2-oidc-with-auth-guards">github.com/jeroenheijmans/sample-angular-oauth2-oidc-with-auth-guards</a></p>
-          <p><a target="_blank" href="https://github.com/jeroenheijmans/sample-auth0-angular-oauth2-oidc">github.com/jeroenheijmans/sample-auth0-angular-oauth2-oidc</a></p>
-          <p><a target="_blank" href="https://youtu.be/q15eTySnWxc">youtu.be/q15eTySnWxc (about conscientiousness)</a></p>
+          <div class="twocol">
+          <div>
+            <p>Slides</p>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAa4AAAGuAQMAAADyO3DZAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAIRSURBVHic7drLbcMwDIBhAhkgI2V1j+QBDLAxX5IQJ0B7CVD+OqROpM+9ECJFW/RPQ2AwGAwGg8FgsK+xTWKo7jf1j/pNHnrk5R3WmPnXQ56Lb2qz8kj7nD3WdbCm7Awfm90rmmzJnixuAINlcOVmlDeAwZbgsn3onN1MS1gYbEpUtQ+dYtx0WQfrySRGJKXXjxiwxmwdS3q6Xa6ANWQeXCOGRCTr3XPaChuvbmC9mde7Nus5yrLVPWJNdRyXYD2ZjnbbKTZfrFnJvAsuWCtWZa3BuMrdJxt0R/0PWEs2tVRk9PStkonf8iusM5OaFRl9lSVRVcDBerKtQuqxy1K67BVhlbxgnZntQ5WPpgjzx4VX+Q3WiY1ngXGXZXGUM6/BBWvGYmKcoqNROxJVLYE1ZX5i9ncNItZyyVGPhK4O0LB+LEoXn7G4slHNOFVYa1YxlEXMiCaRd4kK1ozpvKTCLCKstqDLRAXrxGp2+ho5qh4OKawzO/IsJHUg8hrYRjRhVGGt2fmZ71PHVVU3bu+1DtaTjTGFWRW9Q8A6s9hpZMpM3uKPPlzsSK+NfVgn5kETR6OMpgiz7NJ9evUe1oLZ4qXK1b0Km3UfgsEspFTnbcnPzvKmVob1ZFpvqWR6quQFa83sTzE94pC05Yttb4IL1onVdhMHonPx6NtmG/dTrQz79+y3AwaDwWAwGAwG+wL7Aaysn0BXeiqgAAAAAElFTkSuQmCC" alt="" />
+            <p>
+              <a href="https://jeroenheijmans.github.io/presentation-learning-at-lightning-speed/" target="_blank">
+                jeroenheijmans.github.io/<br>presentation-learning-at-lightning-speed
+              </a>
+            </p>
+          </div>
+          <div>
+            <p>Links</p>
+            <small>
+              <p><a target="_blank" href="https://jeroenheijmans.nl" target="_blank">jeroenheijmans.nl</a></p>
+              <p><a target="_blank" href="https://github.com/tc39/proposal-class-fields">github.com/tc39/proposal-class-fields</a></p>
+              <p><a target="_blank" href="https://cooking.stackexchange.com/questions/50468/why-would-you-place-potatoes-on-salt-when-baking-in-the-oven">cooking.stackexchange.com/questions/50468/why-place-potatoes-on-salt</a></p>
+              <p><a target="_blank" href="https://cooking.stackexchange.com/questions/22405/is-there-any-trick-to-make-a-palindrome-cocktail">cooking.stackexchange.com/questions/22405/make-a-palindrome-cocktail</a></p>
+              <p><a target="_blank" href="https://cooking.stackexchange.com/questions/46531/key-ingredients-for-classic-sauce-bolognese-rag%C3%B9-bolognese">cooking.stackexchange.com/questions/46531/classic-sauce-bolognese-ragù-bolognese</a></p>
+              <p><a target="_blank" href="https://cooking.stackexchange.com/questions/4708/is-it-possible-to-cook-a-whole-fish-in-a-dishwasher">cooking.stackexchange.com/questions/4708/is-it-possible-to-cook-a-whole-fish-in-a-dishwasher</a></p>
+              <p><a target="_blank" href="https://github.com/infi-nl/coding-dojo-netcore">github.com/infi-nl/coding-dojo-netcore</a></p>
+              <p><a target="_blank" href="https://github.com/jeroenheijmans/sample-angular-oauth2-oidc-with-auth-guards">github.com/jeroenheijmans/sample-angular-oauth2-oidc-with-auth-guards</a></p>
+              <p><a target="_blank" href="https://github.com/jeroenheijmans/sample-auth0-angular-oauth2-oidc">github.com/jeroenheijmans/sample-auth0-angular-oauth2-oidc</a></p>
+              <p><a target="_blank" href="https://youtu.be/q15eTySnWxc">youtu.be/q15eTySnWxc (about conscientiousness)</a></p>
+          </small>
+          </div>
         </section>
       </div>
     </div>

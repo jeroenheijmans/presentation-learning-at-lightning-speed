@@ -7,6 +7,40 @@
     "});"]
   },
 
+  "start7": {
+    "prefix": "start7",
+    "body": [
+      "class Tc39Test {",
+      "\t$0",
+      "}",
+      "",
+      "let thing = new Tc39Test();",
+    ]
+  },
+
+  "final7": {
+    "prefix": ["final7"],
+    "body": [
+      "// Proposal TC39: Public/private class fields in Javascript",
+      "",
+      "class Tc39Test {",
+      "  #myPrivate = 'ryan';          // Private field!",
+      "  myPublic = 'announcement';   // Public field.",
+      "",
+      "  get myGetter() { return 'school'; }",
+      "  get backdoor() { return this.#myPrivate; }",
+      "}",
+      "",
+      "let thing = new Tc39Test();",
+      "",
+      "console.log('myGetter = ', thing.myGetter);         // 'school'",
+      "console.log('myPublic = ', thing.myPublic);         // 'announcement'",
+      "console.log('myPrivate = ', thing.myPrivate);       // undefined!!!",
+      "console.log('backdoor = ', thing.backdoor);         // 'ryan'",
+      "console.log('Object.keys => ', Object.keys(thing)); // ['myPublic'] only"
+    ]
+  },
+
   "final1": {
     "prefix": ["final1"],
     "body": [

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "01": "cls & jasmine ./01-tests/spec.js"
+    "01": "jasmine ./01-tests/spec.js",
+    "07": "node ./07-exploring/index.js"
   },
   "author": "Jeroen Heijmans",
   "license": "ISC",
