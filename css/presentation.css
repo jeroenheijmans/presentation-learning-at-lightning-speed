@@ -1,11 +1,16 @@
 .reveal strong {
-  
+  color: #ffd;
   font-weight: normal;
   text-shadow:
-   -1px -1px 4px #000,  
-    1px -1px 4px #000,
-    -1px 1px 4px #000,
-     1px 1px 4px #000;
+   -1px -1px 4px #333,  
+    1px -1px 4px #333,
+    -1px 1px 4px #333,
+     1px 1px 4px #333;
+}
+
+.reveal blockquote {
+  font-size: 96px;
+  padding: 15px;
 }
 
 .reveal .list-unstyled {
@@ -46,6 +51,12 @@
   flex: 1;
 }
 
+.blurred {
+  filter: blur(5px) grayscale(50%);
+}
+
 .reveal .impactful {
   font-size: 128px;
 }
+
+.slides { border: 1px solid #fca; }
