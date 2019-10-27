@@ -7,6 +7,45 @@
     "});"]
   },
 
+  "start5-1": {
+    "prefix": "start5-1",
+    "body": [
+      "<img id='beer1' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer2' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer3' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer4' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer5' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer6' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer7' src='../../assets/coding-example-beer.jpg'>",
+      "<img id='beer8' src='../../assets/coding-example-beer.jpg'>"
+    ]
+  },
+
+  "start5-2": {
+    "prefix": "start5-2",
+    "body": [
+      "<h1>Example of CSS `filter`</h1>",
+      "<p>",
+      "  <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/filter'>MDN</a> |",
+      "  <a href='https://www.w3.org/TR/filter-effects-1/'>W3</a>",
+      "</p>"
+    ]
+  },
+
+  "start5-3": {
+    "prefix": "start5-3",
+    "body": [
+      "#beer1 { filter: none; }",
+      "#beer2 { filter: sepia(70%); }",
+      "#beer3 { filter: saturate(70%); }",
+      "#beer4 { filter: invert(80%); }",
+      "#beer5 { filter: grayscale(90%); }",
+      "#beer6 { filter: hue-rotate(120deg); }",
+      "#beer7 { filter: blur(5px); }",
+      "#beer8 { filter: contrast(400%); }"
+    ]
+  },
+
   "start7": {
     "prefix": "start7",
     "body": [
