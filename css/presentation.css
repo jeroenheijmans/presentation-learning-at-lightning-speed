@@ -24,9 +24,18 @@
      1px 1px 4px #333;
 }
 
+.reveal blockquote:before {
+  content: '“';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  opacity: 0.25;
+  font-size: 125%;
+}
+
 .reveal blockquote {
   font-size: 96px;
-  padding: 15px;
+  padding: 30px;
 }
 
 .reveal .list-unstyled {
