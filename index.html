@@ -40,7 +40,7 @@
           <section><p>Caveat 1:</p><p class="impactful">pragmatic, not theoretical</p></section>
           <section><p>Caveat 2:</p><p class="impactful">it's about <em>active</em> learning</p></section>
           <section><p><em>Bonus</em>:</p><p class="impactful">it's also useful outside tech</p></section>
-          <section>Quickly about conscientiousness...<blockquote><p class="fragment">Conscientiouss people are careful, or diligent...<p class="fragment">...they also are less likely to engage in <strong>antisocial and criminal behavior</strong>.</blockquote></section>
+          <section>Quickly about conscientiousness...<blockquote><p class="fragment">Conscientious people are usually careful, or diligent...<p class="fragment">...they also are less likely to engage in <strong>antisocial and criminal behavior</strong>.</blockquote></section>
           <section><p>My goal:</p><p class="impactful">Inspire <strong>you</strong> to learn in new ways.</p></section>
         </section>
 
@@ -57,56 +57,68 @@
           <h2>1. Tests</h2>
           <section class="impactful"><p class="fragment">Test <em>your assumptions!</em></p></section>
           <section><img src="assets/cooking-bread.jpg"></section>
+          <section class="impactful">Code Demo<footer>(next slide contains static code example)</footer></section>
           <section><pre class="cs"><code data-trim data-line-numbers>
-              [Fact] // "Test"
-              public void Can_serialize_regular_object() {
-                  var result = JsonConvert.SerializeObject(new Bar { Name = "Moe's" });
-                  Assert.Equal("{\"Name\":\"Moe's\"}", result);
-              }
-              
-              [Fact] // "Test"
-              public void Can_serialize_dynamic_object() {
-                  var result = JsonConvert.SerializeObject(new { Answer = 42 });
-                  Assert.Equal("{\"Answer\":42}", result);
-              }
-              
-              [Fact] // "Test"
-              public void Can_serialize_circular_reference() {
-                  var input = new Dictionary&lt;string, object&gt;();
-                  input["Nemesis"] = input;
-                  var result = JsonConvert.SerializeObject(input);
-                  Assert.NotNull(result); // Fails! TODO: Invert assertion.
-              }
+            const moment = require('moment');
+
+            describe('my assumptions about momentjs', () => {
+            
+              it('should create something', () => {
+                const unit = moment();
+                expect(unit).toBeTruthy();
+              });
+            
+              // FAILS!
+              it('should be able to create futures', () => {
+                const talk = moment();
+                const beer =  talk.add(1, 'hour');
+                expect(beer.hour()).toBe(talk.hour() + 1);
+              });
+
+              // WE'VE LEARNED:
+              it('should be mutable', () => {
+                const instant = moment();
+                const oldHours = instant.hour();
+                instant.add(1, 'hour');
+                expect(oldHours).toBeLessThan(instant.hour());
+              });
+            
+            });
           </code></pre></section>
-          <section><h3>Empathy</h3><p>unveils biases that are hurting your assumptions</p><p>helps you write the right tests, in the right way</p></section>
+          <section><h3>Bridge the Gap</h3><p>find bias in your assumptions</p><p>helps you write the right tests</p></section>
         </section>
 
         <section data-transition="slide" data-background-color="#ffcc99">
           <h2>2. Questions</h2>
-          <section class="impactful"><p class="fragment">You learn from the <em>journey</em>,<br> not the <em>destination!</em></p></section>
+          <section class="impactful"><p class="fragment">It's about the <em>journey</em>,<br> not the <em>destination</em>.</p></section>
           <section><img style="transform: scale(1.3)" src="assets/cooking-potatoes-on-salt.png"></section>
-          <section><img style="transform: scale(1.3)" src="assets/coding-questions-1.png"></section>
-          <section><img style="transform: scale(0.8)" src="assets/coding-questions-2.png"></section>
-          <section><h3>Empathy</h3><p>helps closing the gap between your context and that of others</p><p>prevents wasting other people's time</p></section>
+          <section><img style="transform: scale(1.3)" src="assets/coding-question.png"></section>
+          <section><h3>Bridge the Gap</h3><p>prevents wasting other people's time</p><p>help others with similar questions</p></section>
         </section>
 
         <section data-transition="slide" data-background-color="#ffff99">
           <h2>3. Issues</h2>
-          <section class="impactful"><p class="fragment">You learn from the <em>journey</em>,<br> not the <em>destination!</em></p></section>
+          <section class="impactful"><p class="fragment">The <em>evil twin</em> of asking <em>Questions</em>.</p></section>
           <section><img src="assets/cooking-palindrome-cocktail.png"></section>
           <section><img style="transform: scale(1.7)" src="assets/coding-issues.png"></section>
-          <section><h3>Empathy</h3><p>helps you learn about workarounds and solutions</p><p>prevents wasting other people's time</p></section>
+          <section><h3>Bridge the Gap</h3><p>prevents wasting other people's time</p><p>help with finding a solution</p></section>
         </section>
 
         <section data-transition="slide" data-background-color="#ccf8a0">
           <h2>4. Repros</h2>
-          <section><p>Finding your own resolution</p><p>Getting quicker resolution from others</p><p>For future reference</p></section>
+          <section><blockquote class="fragment">Put yourself in their shoes!</blockquote></section>
           <section><img src="assets/cooking-limoncello.jpg"></section>
-          <section><img style="transform: scale(1.2)" src="assets/coding-repro.png"></section>
-          <section><h3>Empathy</h3><p>helps you identify the <em>key</em> bits of a problem</p><p>has a net postive result for <em>you</em> too</p></section>
+          <section>
+            <div class="twocol">
+              <div><img src="assets/coding-repro-support-img-grandfather.jpg"></div>
+              <div><blockquote>Jeroen, help!<br><br>My printer is messing up the euro sign...</blockquote></div>
+            </div>
+          </section>
+          <section><img src="assets/coding-repro-euro-sign.png"></section>
+          <section><h3>Bridge the Gap</h3><p>helps you identify the <em>key</em> bits of a problem</p><p>has a net postive result for <em>you</em> too</p></section>
         </section>
 
-        <section data-transition="slide" data-background-color="#A0EFE9">
+        <section data-transition="slide" data-background-color="#a0efe9">
           <h2>5. Examples</h2>
           <section class="impactful"><p class="fragment">Examples should be <em>exemplary!</em></p></section>
           <section><img style="transform: scale(1.7)" src="assets/cooking-bolognese-question.png"></section>
@@ -114,7 +126,7 @@
           <section><img src="assets/cooking-bolognese-result.jpg"></section>
           <section><img style="transform: scale(1.4)" src="assets/coding-example-1.png"></section>
           <section><img style="transform: scale(0.8)" src="assets/coding-example-2.png"></section>
-          <section><h3>Empathy</h3><p>helps you create more diverse and complete examples</p></section>
+          <section><h3>Bridge the Gap</h3><p>helps you create more diverse and complete examples</p></section>
         </section>
 
         <section data-transition="slide" data-background-color="#99ccff">
@@ -122,7 +134,7 @@
           <section><blockquote class="fragment">If you want to get good at something, start teaching it!</blockquote></section>
           <section><img src="assets/cooking-cocktail.jpg"></section>
           <section><img src="assets/coding-teaching-2.png"></section>
-          <section><h3>Empathy</h3><p>makes you a better teacher</p><p>but also makes you a better <em>student</em></p></section>
+          <section><h3>Bridge the Gap</h3><p>makes you a better teacher</p><p>but also makes you a better <em>student</em></p></section>
         </section>
 
         <section data-transition="slide" data-background-color="#ea9efa">
@@ -152,7 +164,7 @@
             console.log(thing.foo);       // undefined
             console.log(thing.backdoor);  // "ryan"
           </code></pre></section>
-          <section><h3>Empathy</h3><p>Don't explore only your <em>own</em> comfort zone!</p></section>
+          <section><h3>Bridge the Gap</h3><p>Don't explore only your <em>own</em> comfort zone!</p></section>
         </section>
 
         <section data-transition="slide">

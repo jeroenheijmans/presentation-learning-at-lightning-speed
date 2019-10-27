@@ -1,0 +1,32 @@
+{
+  "spec": {
+    "prefix": ["spec"],
+    "body": [
+      "it('$1', () => {",
+      "\t$0",
+    "});"]
+  },
+
+  "final1": {
+    "prefix": ["final1"],
+    "body": [
+      "const moment = require('moment');",
+      "",
+      "describe('my assumptions about momentjs', () => {",
+      "",
+      "  it('should create something', () => {",
+      "    const unit = moment();",
+      "    expect(unit).toBeTruthy();",
+      "  });",
+      "",
+      "  it('should be able to create futures', () => {",
+      "    const talk = moment();",
+      "    const beer =  talk.add(1, 'hour');",
+      "    expect(beer.hour()).toBe(talk.hour() + 1);",
+      "    expect(beer.format()).not.toBe(talk.format());",
+      "  });",
+      "",
+      "});"
+    ]
+  }
+}

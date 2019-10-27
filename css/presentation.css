@@ -1,3 +1,7 @@
+.reveal section > section > footer {
+  font-size: 36px;
+}
+
 .reveal strong {
   color: #ffd;
   font-weight: normal;

@@ -1,0 +1,15 @@
+{
+  "name": "code-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "01": "cls & jasmine ./01-tests/spec.js"
+  },
+  "author": "Jeroen Heijmans",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "moment": "^2.24.0"
+  }
+}
